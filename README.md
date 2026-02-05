@@ -12,6 +12,13 @@ A minimal Haskell backend for posting and sharing poems. The API stores poems in
 curl -L -o dead_poet.tar.gz https://github.com/bahdahshin/dead_poet/archive/refs/heads/main.tar.gz
 ```
 
+## Extract and enter the project
+
+```bash
+tar -xzf dead_poet.tar.gz
+cd dead_poet-main
+```
+
 ## Run locally
 
 ```bash
@@ -31,12 +38,18 @@ The container exposes `http://localhost:8080`.
 
 ## NixOS setup for Docker Compose
 
-1. Copy `nixos/docker-compose.nix` into your NixOS configuration directory (for example, `/etc/nixos/docker-compose.nix`).
+1. From the repo root, copy the module into your NixOS configuration directory.
    ```bash
-   sudo cp /path/to/dead_poet/nixos/docker-compose.nix /etc/nixos/docker-compose.nix
+   cd /path/to/dead_poet
+   sudo cp nixos/docker-compose.nix /etc/nixos/docker-compose.nix
    ```
-2. Replace `<your-username>` with your actual user name.
-3. Import the module in `configuration.nix`:
+2. Replace `<your-username>` with your actual user name in `/etc/nixos/docker-compose.nix`.
+3. Import the module in `/etc/nixos/configuration.nix` (scripted):
+   ```bash
+   bash nixos/import-docker-compose.sh
+   ```
+
+   Or import it manually in `/etc/nixos/configuration.nix`:
 
 ```nix
 {
