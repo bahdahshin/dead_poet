@@ -43,13 +43,8 @@ The container exposes `http://localhost:8080`.
    cd /path/to/dead_poet
    sudo cp nixos/docker-compose.nix /etc/nixos/docker-compose.nix
    ```
-2. Replace `<your-username>` with your actual user name in `/etc/nixos/docker-compose.nix`.
-3. Import the module in `/etc/nixos/configuration.nix` (scripted):
-   ```bash
-   bash nixos/import-docker-compose.sh
-   ```
-
-   Or import it manually in `/etc/nixos/configuration.nix`:
+2. If your NixOS user is not `nixos`, update `/etc/nixos/docker-compose.nix` to use your actual user name.
+3. Import the module manually in `/etc/nixos/configuration.nix`:
 
 ```nix
 {
