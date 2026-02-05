@@ -6,6 +6,12 @@ A minimal Haskell backend for posting and sharing poems. The API stores poems in
 
 - GHC + Cabal (e.g., via GHCup)
 
+## Download without Git (e.g., NixOS VM)
+
+```bash
+curl -L -o dead_poet.tar.gz https://github.com/bahdahshin/dead_poet/archive/refs/heads/main.tar.gz
+```
+
 ## Run locally
 
 ```bash
